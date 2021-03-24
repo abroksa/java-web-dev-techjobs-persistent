@@ -38,15 +38,24 @@ public class EmployerController {
 
         if (errors.hasErrors()) {
             return "employers/add";
+        } else {
+            employerRepository.save(newEmployer);
         }
 
         return "redirect:";
     }
 
+
+    //////////////////////////////////////////////////////////////////////
+    //displayViewEmployer will be in charge of rendering a page to view the contents of an individual employer object. It will make use of that employer object’s id field to grab the correct information from employerRepository. optEmployer is currently initialized to null. Replace this using the .findById() method with the right argument to look for the given employer object from the data layer.
+/////////////////////////////////////////////////////////////////////
+    //Does this work correctly? Not sure yet
+    /////////////////////////////////////////////////////////////
+
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 
-        Optional optEmployer = null;
+        Optional optEmployer = employerRepository.findById("employerId");
         if (optEmployer.isPresent()) {
             Employer employer = (Employer) optEmployer.get();
             model.addAttribute("employer", employer);
