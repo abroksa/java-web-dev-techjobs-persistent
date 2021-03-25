@@ -21,7 +21,7 @@ public class EmployerController {
 //2. add an index method that responds to /employers with a list of all employers in the database//
 ///////////////////////////////////////////////////////////
     @GetMapping("")
-    public String index(Model model) {
+    public String index(Model model) { //add attribute means send to view, values on a bus going to model
         model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
