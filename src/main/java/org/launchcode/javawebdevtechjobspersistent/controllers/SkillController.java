@@ -1,6 +1,5 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
 
-import org.launchcode.javawebdevtechjobspersistent.models.Employer;
 import org.launchcode.javawebdevtechjobspersistent.models.Skill;
 import org.launchcode.javawebdevtechjobspersistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import java.util.Optional;
 @Controller
 @RequestMapping("skills")
 public class SkillController {
-
     @Autowired
     private SkillRepository skillRepository;
 
@@ -33,7 +31,7 @@ public class SkillController {
 
     @PostMapping("add")
     public String processAddSkillForm(@ModelAttribute @Valid Skill newSkill,
-                                         Errors errors, Model model) {
+                                      Errors errors, Model model) {
 
         if (errors.hasErrors()) {
             return "skills/add";
@@ -55,6 +53,7 @@ public class SkillController {
         } else {
             return "redirect:../";
         }
+
+
     }
 }
-
