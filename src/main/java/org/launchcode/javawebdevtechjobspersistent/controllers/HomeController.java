@@ -44,6 +44,7 @@ public class HomeController {
         model.addAttribute("title", "Add Job");
         model.addAttribute(new Job());
         model.addAttribute("employers", employerRepository.findAll());
+        model.addAttribute("skills", skillRepository.findAll());
         return "add";
     }
 
@@ -61,6 +62,7 @@ public class HomeController {
             newJob.setEmployer(employer);
         }
 
+        //Optional<Skill> optSkill = skillRepository.findById(skills);
         List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
         newJob.setSkills(skillObjs);
 
