@@ -17,7 +17,7 @@ public class Employer extends AbstractEntity {
     //part 3 step 1.1 and 1.2 do i need "mapped by"?
     @OneToMany
     @JoinColumn
-    private final List<Job> events = new ArrayList<>();
+    private List<Job> jobs = new ArrayList<>();
 
     public Employer() {}
 
