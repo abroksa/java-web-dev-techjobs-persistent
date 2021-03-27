@@ -61,9 +61,8 @@ public class HomeController {
             Employer employer = optEmployer.get();
             newJob.setEmployer(employer);
         }
-
         jobRepository.save(newJob);
-        return "redirect:";
+        return "add";
     }
 
     @GetMapping("view/{jobId}")
