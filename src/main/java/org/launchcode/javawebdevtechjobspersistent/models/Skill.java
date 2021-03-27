@@ -13,7 +13,7 @@ public class Skill extends AbstractEntity {
     @ManyToMany(mappedBy = "skills")
     private List<Job> jobs = new ArrayList<Job>();
 
-    private List<Skill> skills = new ArrayList<Skill>();
+//    private List<Skill> skills = new ArrayList<Skill>();
 
     public Skill() {}
 
@@ -33,12 +33,12 @@ public class Skill extends AbstractEntity {
         this.jobs = jobs;
     }
 
-    public List<Skill> getSkills() {
-        return skills;
-    }
-
-    public void setSkills(List<Skill> skills) {
-        this.skills = skills;
-    }
+//    public List<Skill> getSkills() {
+//        return skills;
+//    }
+//
+//    public void setSkills(List<Skill> skills) {
+//        this.skills = skills;
+//    }
 
 }
