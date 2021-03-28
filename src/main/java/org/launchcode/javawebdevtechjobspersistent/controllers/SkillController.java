@@ -55,6 +55,5 @@ public class SkillController {
             return "redirect:../";
         }
 
-
     }
 }

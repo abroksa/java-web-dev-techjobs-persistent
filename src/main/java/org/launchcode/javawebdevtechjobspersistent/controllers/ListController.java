@@ -66,20 +66,4 @@ public class ListController {
 
         return "list-jobs";
     }
-
-
-
-
-//    @GetMapping("view/{jobId}")
-//    public String displayViewjob(Model model, @PathVariable Integer jobId) {
-//
-//        Optional optJob = jobRepository.findById(jobId);
-//        if (optJob.isPresent()) {
-//            Job job = (Job) optJob.get();
-//            model.addAttribute("job", job);
-//            return "list/view";
-//        } else {
-//            return "redirect:../";
-//        }
-//    }
 }

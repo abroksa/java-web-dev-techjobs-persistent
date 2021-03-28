@@ -17,15 +17,12 @@ public class EmployerController {
 
     @Autowired
     private EmployerRepository employerRepository;
-//////////////////////////////////////////////////////
-//2. add an index method that responds to /employers with a list of all employers in the database//
-///////////////////////////////////////////////////////////
     @GetMapping("")
-    public String index(Model model) { //add attribute means send to view, values on a bus going to model
+    public String index(Model model) {
         model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
-//////////////////////////////////////////////////////
+
     @GetMapping("add")
     public String displayAddEmployerForm(Model model) {
         model.addAttribute(new Employer());
@@ -45,13 +42,6 @@ public class EmployerController {
 
         return "redirect:";
     }
-
-
-    //////////////////////////////////////////////////////////////////////
-    //displayViewEmployer will be in charge of rendering a page to view the contents of an individual employer object. It will make use of that employer object’s id field to grab the correct information from employerRepository. optEmployer is currently initialized to null. Replace this using the .findById() method with the right argument to look for the given employer object from the data layer.
-/////////////////////////////////////////////////////////////////////
-    //Does this work correctly? Not sure yet
-    /////////////////////////////////////////////////////////////
 
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable Integer employerId) {
