@@ -67,12 +67,12 @@ public class HomeController {
         newJob.setSkills(skillObjs);
 
         jobRepository.save(newJob);
-        return "add";
+        return "redirect:";
     }
 
     @GetMapping("view/{jobId}")
     public String displayViewJob(Model model, @PathVariable int jobId) {
-        model.addAttribute(jobRepository.findById(jobId));
+        model.addAttribute("job", jobRepository.findById(jobId));
         //still doesn't work
         return "view";
     }
