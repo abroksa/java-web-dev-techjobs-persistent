@@ -8,12 +8,15 @@ import org.launchcode.javawebdevtechjobspersistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import org.launchcode.javawebdevtechjobspersistent.models.JobData;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 /**
  * Created by LaunchCode
@@ -63,4 +66,20 @@ public class ListController {
 
         return "list-jobs";
     }
+
+
+
+
+//    @GetMapping("view/{jobId}")
+//    public String displayViewjob(Model model, @PathVariable Integer jobId) {
+//
+//        Optional optJob = jobRepository.findById(jobId);
+//        if (optJob.isPresent()) {
+//            Job job = (Job) optJob.get();
+//            model.addAttribute("job", job);
+//            return "list/view";
+//        } else {
+//            return "redirect:../";
+//        }
+//    }
 }
